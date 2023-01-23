@@ -57,5 +57,5 @@ export const PRODUCTS = [
             productImage: product8,
         },
 
-    // 20.24
+    
 ]
