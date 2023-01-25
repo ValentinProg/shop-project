@@ -3,7 +3,8 @@ import { ShopContext } from "../../context/shop-context";
 import { useContext } from "react";
 
 const CartItem = (props) => {
-    const { cartItems } = useContext(ShopContext);
+  const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
+    useContext(ShopContext);
   return (
     <div className="cartItem">
       <img src={props.data.productImage} />
@@ -13,9 +14,13 @@ const CartItem = (props) => {
         </p>
         <p>${props.data.price}</p>
         <div className="countHandler">
-             <button> - </button>
-             <input type="text" value={cartItems}/>
-             <button> + </button>
+          <button onClick={() => removeFromCart(props.data.id)}> - </button>
+          <input
+            type="text"
+            value={cartItems[props.data.id]}
+            onChange={(e) => updateCartItemCount(Number(e.target.value), props.data.id)}
+          />
+          <button onClick={() => addToCart(props.data.id)}> + </button>
         </div>
       </div>
     </div>
