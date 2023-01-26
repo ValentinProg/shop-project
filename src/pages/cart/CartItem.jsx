@@ -10,7 +10,7 @@ const CartItem = (props) => {
       <img src={props.data.productImage} />
       <div className="description">
         <p>
-          <b>{props.data.productName}</b>
+          <b>{props.data.productName.toUpperCase()}</b>
         </p>
         <p>${props.data.price}</p>
         <div className="countHandler">
