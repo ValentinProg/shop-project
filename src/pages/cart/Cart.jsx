@@ -1,13 +1,18 @@
 import React from "react";
-import { PRODUCTS } from "../../products";
-import { ShopContext } from "../../context/shop-context";
 import CartItem from "./CartItem";
-import { useContext } from "react";
 import "./Cart.css";
 import { useNavigate } from "react-router-dom";
+// import { PRODUCTS } from "../../products";
+// import { ShopContext } from "../../context/shop-context";
+// import { useContext } from "react";
+import { useStore } from '../../store.js';
 
 const Cart = () => {
-  const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+  // const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+  const cartItems = useStore((state) => state.cartItems)
+  const getTotalCartAmount = useStore((state) => state.getTotalCartAmount)
+  const PRODUCTS = useStore((state) => state.PRODUCTS)
+  
   const navigate = useNavigate();
 
   return (

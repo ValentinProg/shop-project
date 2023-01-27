@@ -1,10 +1,17 @@
 import React from "react";
-import { ShopContext } from "../../context/shop-context";
-import { useContext } from "react";
+// import { ShopContext } from "../../context/shop-context";
+// import { useContext } from "react";
+import { useStore } from '../../store.js';
 
 const CartItem = (props) => {
-  const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
-    useContext(ShopContext);
+  // const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
+  //   useContext(ShopContext);
+
+  const cartItems = useStore((state) => state.cartItems)
+  const addToCart = useStore((state) => state.addToCart)
+  const removeFromCart = useStore((state) => state.removeFromCart)
+  const updateCartItemCount  = useStore((state) => state.updateCartItemCount )
+
   return (
     <div className="cartItem">
       <img src={props.data.productImage} />

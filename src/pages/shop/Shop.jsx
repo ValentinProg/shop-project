@@ -1,15 +1,21 @@
 import React from "react";
-import { PRODUCTS } from "../../products";
 import "./Shop.css";
-import { ShopContext } from "../../context/shop-context";
-import { useContext } from "react";
+// import { PRODUCTS } from "../../products";
+// import { ShopContext } from "../../context/shop-context";
+// import { useContext } from "react";
+
+import { useStore } from '../../store.js';
 
 const Shop = () => {
-  const { addToCart, cartItems } = useContext(ShopContext);
+  // const { addToCart, cartItems } = useContext(ShopContext);
+const PRODUCTS = useStore((state) => state.PRODUCTS)
+const addToCart = useStore((state) => state.addToCart)
+const cartItems = useStore((state) => state.cartItems)
+
   return (
     <div className="shop">
       <div className="shopTitle">
-        <h1>Valentin Shop</h1>
+        <h1>Your Best Mobile Shop</h1>
       </div>
       <div className="products">
         {PRODUCTS.map((product) => (
