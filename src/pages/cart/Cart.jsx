@@ -1,14 +1,24 @@
 import React from "react";
-import { PRODUCTS } from "../../products";
-import { ShopContext } from "../../context/shop-context";
 import CartItem from "./CartItem";
-import { useContext } from "react";
 import "./Cart.css";
 import { useNavigate } from "react-router-dom";
+import { useStore } from "../../store.js";
 
 const Cart = () => {
-  const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+  const cartItems = useStore((state) => state.cartItems);
+  const PRODUCTS = useStore((state) => state.PRODUCTS);
   const navigate = useNavigate();
+
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        let itemInfo = PRODUCTS.find((product) => product.id === Number(item));
+        totalAmount += cartItems[item] * itemInfo.price;
+      }
+    }
+    return totalAmount;
+  };
 
   return (
     <div className="cart">
