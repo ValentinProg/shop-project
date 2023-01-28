@@ -11,7 +11,8 @@ const CartItem = (props) => {
   const addToCart = useStore((state) => state.addToCart)
   const removeFromCart = useStore((state) => state.removeFromCart)
   const updateCartItemCount  = useStore((state) => state.updateCartItemCount )
-
+  
+console.log(updateCartItemCount);
   return (
     <div className="cartItem">
       <img src={props.data.productImage} />

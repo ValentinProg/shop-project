@@ -88,10 +88,23 @@ export const useStore = create((set) => ({
   //       }
   //     }
 
-// itemInfo: state.PRODUCTS.find((product) => product.id === Number()),
+  // itemInfo: state.cartItems.filter(state.PRODUCTS => Number(item) === item.id),
 
-  getTotalCartAmount: (item) =>
-    set((state) => ({
-        totalAmount: state.totalAmount  + state.cartItems[item] * state.PRODUCTS.price
-    })),
+  // itemInfo: state.PRODUCTS.find((product) => product.id === Number(item)),
+
+  // getTotalCartAmount: (item) =>
+  //   set((state) => ({
+  //     totalAmount:
+  //       state.totalAmount + state.cartItems[item] * state.PRODUCTS.price,
+   
+  //     })),
+
+
+  // getTotalCartAmount: (item) =>
+  //   set((state) => ({
+  //     totalAmount: state.totalAmount + state.updateCartItemCount * state.PRODUCTS.price,
+        
+   
+  //     })),
+
 }));
