@@ -1,16 +1,11 @@
 import React from "react";
 import "./Shop.css";
-// import { PRODUCTS } from "../../products";
-// import { ShopContext } from "../../context/shop-context";
-// import { useContext } from "react";
-
-import { useStore } from '../../store.js';
+import { useStore } from "../../store.js";
 
 const Shop = () => {
-  // const { addToCart, cartItems } = useContext(ShopContext);
-const PRODUCTS = useStore((state) => state.PRODUCTS)
-const addToCart = useStore((state) => state.addToCart)
-const cartItems = useStore((state) => state.cartItems)
+  const PRODUCTS = useStore((state) => state.PRODUCTS);
+  const addToCart = useStore((state) => state.addToCart);
+  const cartItems = useStore((state) => state.cartItems);
 
   return (
     <div className="shop">
@@ -31,7 +26,8 @@ const cartItems = useStore((state) => state.cartItems)
               className="addToCartBttn"
               onClick={() => addToCart(product.id)}
             >
-              Add to Cart {cartItems[product.id] > 0 && <>({cartItems[product.id]})</>}
+              Add to Cart
+              {cartItems[product.id] > 0 && <>({cartItems[product.id]})</>}
             </button>
           </div>
         ))}

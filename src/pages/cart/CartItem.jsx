@@ -1,18 +1,12 @@
 import React from "react";
-// import { ShopContext } from "../../context/shop-context";
-// import { useContext } from "react";
-import { useStore } from '../../store.js';
+import { useStore } from "../../store.js";
 
 const CartItem = (props) => {
-  // const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
-  //   useContext(ShopContext);
+  const cartItems = useStore((state) => state.cartItems);
+  const addToCart = useStore((state) => state.addToCart);
+  const removeFromCart = useStore((state) => state.removeFromCart);
+  const updateCartItemCount = useStore((state) => state.updateCartItemCount);
 
-  const cartItems = useStore((state) => state.cartItems)
-  const addToCart = useStore((state) => state.addToCart)
-  const removeFromCart = useStore((state) => state.removeFromCart)
-  const updateCartItemCount  = useStore((state) => state.updateCartItemCount )
-  
-console.log(updateCartItemCount);
   return (
     <div className="cartItem">
       <img src={props.data.productImage} />
@@ -26,7 +20,9 @@ console.log(updateCartItemCount);
           <input
             type="text"
             value={cartItems[props.data.id]}
-            onChange={(e) => updateCartItemCount(Number(e.target.value), props.data.id)}
+            onChange={(e) =>
+              updateCartItemCount(Number(e.target.value), props.data.id)
+            }
           />
           <button onClick={() => addToCart(props.data.id)}> + </button>
         </div>

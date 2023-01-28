@@ -2,15 +2,10 @@ import React from "react";
 import CartItem from "./CartItem";
 import "./Cart.css";
 import { useNavigate } from "react-router-dom";
-// import { PRODUCTS } from "../../products";
-// import { ShopContext } from "../../context/shop-context";
-// import { useContext } from "react";
 import { useStore } from "../../store.js";
 
 const Cart = () => {
-  // const { cartItems, getTotalCartAmount } = useContext(ShopContext);
   const cartItems = useStore((state) => state.cartItems);
-  // const getTotalCartAmount = useStore((state) => state.getTotalCartAmount)
   const PRODUCTS = useStore((state) => state.PRODUCTS);
   const navigate = useNavigate();
 

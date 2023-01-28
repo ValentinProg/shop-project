@@ -76,35 +76,5 @@ export const useStore = create((set) => ({
     set((state) => ({
       cartItems: { ...state.cartItems, [itemId]: newAmount },
     })),
-
-  totalAmount: 0,
-
-  //   const getTotalCartAmount = () => {
-  //     let totalAmount = 0;
-  //     for (const item in cartItems) {
-  //       if (cartItems[item] > 0) {
-  //         let itemInfo = PRODUCTS.find((product) => product.id === Number(item));
-  //         totalAmount += cartItems[item] * itemInfo.price
-  //       }
-  //     }
-
-  // itemInfo: state.cartItems.filter(state.PRODUCTS => Number(item) === item.id),
-
-  // itemInfo: state.PRODUCTS.find((product) => product.id === Number(item)),
-
-  // getTotalCartAmount: (item) =>
-  //   set((state) => ({
-  //     totalAmount:
-  //       state.totalAmount + state.cartItems[item] * state.PRODUCTS.price,
-   
-  //     })),
-
-
-  // getTotalCartAmount: (item) =>
-  //   set((state) => ({
-  //     totalAmount: state.totalAmount + state.updateCartItemCount * state.PRODUCTS.price,
-        
-   
-  //     })),
-
+    
 }));
