@@ -14,7 +14,7 @@ const Shop = () => {
       </div>
       <div className="products">
         {PRODUCTS.map((product) => (
-          <div className="product">
+          <div className="product" key={product.id}>
             <img src={product.productImage} />
             <div className="description">
               <p>

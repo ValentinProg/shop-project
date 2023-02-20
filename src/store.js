@@ -61,6 +61,8 @@ export const useStore = create((set) => ({
   ],
 
   cartItems: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0 },
+  cartItemsSum: 0,
+  totalAmount: 0,
 
   addToCart: (itemId) =>
     set((state) => ({
@@ -76,5 +78,41 @@ export const useStore = create((set) => ({
     set((state) => ({
       cartItems: { ...state.cartItems, [itemId]: newAmount },
     })),
-    
+
+  getTotalAmount: () =>
+    set((state) => ({
+      totalAmount: Object.values(state.cartItems).reduce((x, y) => x + y, 0),
+    })),
+
+  // getTotalSum: () => {
+  //   let total = 0;
+  //   for (const item in get().cartItems) {
+  //     if (get().cartItems[item] > 0) {
+  //       const itemInfo = get().PRODUCTS.find(
+  //         (product) => product.id === Number(item)
+  //       );
+  //       const cartItemsAmount = get().cartItems[item];
+  //       const itemPrice = itemInfo?.price;
+  //       total += cartItemsAmount * itemPrice;
+  //     }
+  //   }
+
+  //   set({ cartItemsSum: total });
+  // }
+
+  getTotalSum: () =>
+    set((state) => {
+      let total = 0;
+      for (const item in state.cartItems) {
+        if (state.cartItems[item] > 0) {
+          const itemInfo = state.PRODUCTS.find(
+            (product) => product.id === Number(item)
+          );
+          const cartItemsAmount = state.cartItems[item];
+          const itemPrice = itemInfo?.price;
+          total += cartItemsAmount * itemPrice;
+        }
+      }
+      return { cartItemsSum: total };
+    }),
 }));
