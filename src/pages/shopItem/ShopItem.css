@@ -1,0 +1,30 @@
+.ShopItem {
+  margin: 120px;
+
+}
+
+.ShopItemTitle {
+  text-align: center;
+}
+
+.ShopItemInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.ShopItem img {
+  height: 500px;
+  width: auto;
+  margin: 50px;
+}
+
+.ShopItemTehInfo {
+  font-size: 24px;
+}
+
+.ShopItemTehInfo button {
+  font-size: 24px;
+  margin-bottom: 30px;
+}

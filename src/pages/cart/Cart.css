@@ -3,13 +3,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
+
+/* .cartItems {
+  margin-top: 120px;
+} */
 
 .cartItem {
   width: 700px;
   height: 250px;
   display: flex;
-
   align-items: center;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
@@ -17,7 +21,7 @@
 }
 
 .cartItem img {
-  width: 200px;
+  width: 160px;
   margin: 40px;
 }
 
@@ -44,5 +48,13 @@
   border-radius: 8px;
   margin: 10px;
   cursor: pointer;
-  font-family: 'Shantell Sans', cursive;
+  font-family: 'Barlow', sans-serif;  
 }
+
+.checkout h1 {
+  margin: 10px;
+}
+.checkout {
+  display: block;
+}
+

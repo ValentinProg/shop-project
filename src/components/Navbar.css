@@ -7,6 +7,10 @@
   justify-content: space-around;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
+  overflow: hidden;
+  position: fixed; 
+  top: 0; 
+  
 }
 
 .links {

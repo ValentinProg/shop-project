@@ -29,9 +29,8 @@ const Cart = () => {
  
   return (
     <div className="cart">
-      <div>
-        <h1>Your cart Items</h1>
-      </div>
+      {totalAmount > 0 &&  <h1>Your cart Items :</h1>}
+    
       <div className="cartItems">
         {PRODUCTS.map((product) => {
           if (cartItems[product.id] > 0) {
@@ -41,7 +40,7 @@ const Cart = () => {
       </div>
       {totalAmount > 0 ? (
         <div className="checkout">
-          <p>Subtotal: ${cartItemsSum}</p>
+          <h1>Subtotal: ${cartItemsSum}</h1>
           <button onClick={() => navigate("/")}>Continue Shopping</button>
           <button>Checkout</button>
         </div>
