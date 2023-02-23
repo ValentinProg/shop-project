@@ -28,29 +28,12 @@
 
 .ShopItemTehInfo button {
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 
 
   
-
-/* 
-@media only screen and (max-width: 1024px) {
-  .ShopItemTehInfo {
-    font-size: 1.2rem;
-    margin-left: 1rem;
-  } 
-  .ShopItemTehInfo p {
-    margin: 0.5rem;
-  } 
-  .ShopItem img {
-    height: 24rem;
-    width: auto;
-    margin: 1.5rem;
-  }
-} */
-
 
 @media only screen and (max-width: 768px) {
   .ShopItemTitle {
@@ -70,10 +53,20 @@
   }
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 550px) {
+
+  .ShopItemInfo {
+    flex-direction: column;
+  } 
+
   .ShopItemTehInfo {
     font-size: 0.8rem;
     margin-left: 0rem;
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
   } 
   .ShopItemTehInfo p {
     margin: 0.1rem;
@@ -82,6 +75,11 @@
     height: 18rem;
     width: auto;
     margin: 0.5rem;
+  }
+
+  .ShopItemTehInfo button {
+    font-size: 1rem;
+    margin: 1rem;
   }
 }
 

@@ -19,6 +19,14 @@ const ShopItem = () => {
       <div className="ShopItemInfo">
         <img src={product.productImage} />
         <div className="ShopItemTehInfo">
+      
+          <p> Price: ${product.price}</p>
+          <p> Color: {product.color}</p>
+          <p> Brand: {product.productName.toUpperCase()} </p>
+          <p> Model: {product.model} </p>
+          <p> Display: {product.display} </p>
+          <p> Camera: {product.camera} </p>
+          <p> Memory: {product.memory} Gb </p>
           <Link to="/cart">
             <button
               className="addToCartBttn"
@@ -27,13 +35,6 @@ const ShopItem = () => {
               Buy
             </button>
           </Link>
-          <p> Price: ${product.price}</p>
-          <p> Color: {product.color}</p>
-          <p> Brand: {product.productName.toUpperCase()} </p>
-          <p> Model: {product.model} </p>
-          <p> Display: {product.display} </p>
-          <p> Camera: {product.camera} </p>
-          <p> Memory: {product.memory} Gb </p>
         </div>
       </div>
     </div>

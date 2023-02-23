@@ -17,8 +17,8 @@
 .product {
   border-radius: 15px;
   width: 15rem;
-  height: 25rem;
-  margin: 6rem;
+  height: 28rem;
+  margin: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,10 +35,6 @@
 }
 
 .product:hover {
-  /* box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5); */
-  /* transition: 0.3s ease-in; */
-  /* transform: scale(1.08);  */
-
   cursor: pointer;
   align-items: center;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
@@ -63,24 +59,24 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 425px) {
-  .shopTitle {
-    margin: 120px 5px 0px 5px;
-    font-size: 1.2rem;
-  }
-
-  .product {
-    width: 15rem;
-    height: 25rem;
-    margin: 6rem;
-  }
-}
-
 @media only screen and (max-width: 1024px) {
   .shopTitle {
     font-size: 1.5rem;
   }
   .product {
-    height: 18rem;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .shopTitle {
+    margin: 120px 5px 0px 5px;
+    font-size: 1.2rem;
+  }
+  .product {
+    margin: 1rem;
+  }
+  .product img {
+    height: 14rem;
   }
 }
