@@ -13,10 +13,8 @@ const ShopItem = () => {
   return (
     <div className="ShopItem">
       <p className="ShopItemTitle">
-        <h1>
-          Mobile phone: {product.productName.toUpperCase()}/{product.model}/
-          {product.color}
-        </h1>
+        Mobile phone: {product.productName.toUpperCase()}/{product.model}/
+        {product.color}
       </p>
       <div className="ShopItemInfo">
         <img src={product.productImage} />
