@@ -4,6 +4,7 @@ import "./Cart.css";
 import { useNavigate } from "react-router-dom";
 import { useStore } from "../../store.js";
 
+
 const Cart = () => {
   const cartItems = useStore((state) => state.cartItems);
   const PRODUCTS = useStore((state) => state.PRODUCTS);
@@ -11,10 +12,11 @@ const Cart = () => {
   const getTotalSum = useStore((state) => state.getTotalSum);
   const totalAmount = useStore((state) => state.totalAmount);
   const cartItemsSum = useStore((state) => state.cartItemsSum);
+  
 
   useEffect(() => {
-    getTotalSum()
-  },[totalAmount])
+    getTotalSum();
+  }, [totalAmount]);
 
   // const getTotalCartAmount = () => {
   //   let totalAmount = 0;
@@ -26,15 +28,15 @@ const Cart = () => {
   //   }
   //   return totalAmount;
   // };
- 
+
   return (
     <div className="cart">
-      {totalAmount > 0 &&  <h1>Your cart Items :</h1>}
-    
+      {totalAmount > 0 && <h1>Your cart Items :</h1>}
+
       <div className="cartItems">
         {PRODUCTS.map((product) => {
           if (cartItems[product.id] > 0) {
-            return <CartItem data={product} key={product.id}/>;
+            return <CartItem data={product} key={product.id} />;
           }
         })}
       </div>

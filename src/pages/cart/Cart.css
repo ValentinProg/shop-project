@@ -11,9 +11,13 @@
   height: 16rem;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   border-radius: 1.5rem;
   margin: 2rem;
+}
+.cartItem h1 {
+ font-size: 2rem;
 }
 
 .cartItem img {
@@ -22,7 +26,7 @@
 }
 
 .cartItem .description {
-  width: 100%;
+  /* width: 100%; */
   font-size: 2rem;
   display: flex;
   flex-direction: column;
@@ -33,6 +37,13 @@
 .countHandler input {
   width: 3rem;
   text-align: center;
+}
+
+.cleanCartItemLogo svg {
+
+}
+.cleanCartItemLogo:hover {
+cursor: pointer;
 }
 
 .checkout button {
@@ -67,7 +78,12 @@
     width: 18rem;
     height: 12rem;
     margin: 1rem;
+    padding: 0.6rem;
   }
+
+  .cartItem h1 {
+    font-size: 1.5rem;
+   }
 
   .cartItem img {
     width: 7rem;

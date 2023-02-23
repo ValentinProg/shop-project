@@ -149,6 +149,7 @@ export const useStore = create((set) => ({
       totalAmount: Object.values(state.cartItems).reduce((x, y) => x + y, 0), 
     })),
 
+
   // getTotalSum: () => {
   //   let total = 0;
   //   for (const item in get().cartItems) {
@@ -181,5 +182,17 @@ export const useStore = create((set) => ({
       
       return { cartItemsSum: total };
     }),
-    
+
+    cleanCartItem: (itemId) =>
+    set((state) => ({
+      cartItems: { ...state.cartItems, [itemId]: 0 },
+    })),
+
+    // cleanCart: () =>
+    // set(() => ({
+    //   cartItems: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, }, 
+    // })),
+
+   
+
 }));
