@@ -7,7 +7,7 @@ const CartItem = (props) => {
   const addToCart = useStore((state) => state.addToCart);
   const removeFromCart = useStore((state) => state.removeFromCart);
   const updateCartItemCount = useStore((state) => state.updateCartItemCount);
-  const cleanCartItem = useStore((state) => state.cleanCartItem);
+  const deleteCartItem = useStore((state) => state.deleteCartItem);
 
   return (
     <div className="cartItem">
@@ -28,7 +28,7 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className="cleanCartItemLogo">
-        <Trash size={32} onClick={() => cleanCartItem(props.data.id)} />
+        <Trash size={32} onClick={() => deleteCartItem(props.data.id)} />
       </div>
     </div>
   );

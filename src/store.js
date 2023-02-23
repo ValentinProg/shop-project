@@ -183,7 +183,7 @@ export const useStore = create((set) => ({
       return { cartItemsSum: total };
     }),
 
-    cleanCartItem: (itemId) =>
+    deleteCartItem: (itemId) =>
     set((state) => ({
       cartItems: { ...state.cartItems, [itemId]: 0 },
     })),
