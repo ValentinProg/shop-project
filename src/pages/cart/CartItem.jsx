@@ -1,6 +1,7 @@
 import React from "react";
 import { useStore } from "../../store.js";
 import { Trash } from "phosphor-react";
+import { showToast } from "../../helpers/showToast.jsx";
 
 const CartItem = (props) => {
   const cartItems = useStore((state) => state.cartItems);
@@ -8,6 +9,12 @@ const CartItem = (props) => {
   const removeFromCart = useStore((state) => state.removeFromCart);
   const updateCartItemCount = useStore((state) => state.updateCartItemCount);
   const deleteCartItem = useStore((state) => state.deleteCartItem);
+
+
+  const deleteCartItemToast = (id, name) => {
+    deleteCartItem(id)
+    showToast('success',`${name} successfully deleted!`)
+  }
 
   return (
     <div className="cartItem">
@@ -28,7 +35,8 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className="cleanCartItemLogo">
-        <Trash size={32} onClick={() => deleteCartItem(props.data.id)} />
+        {/* <Trash size={32} onClick={() => deleteCartItem(props.data.id)} /> */}
+        <Trash size={32} onClick={() => deleteCartItemToast(props.data.id,props.data.productName)} />
       </div>
     </div>
   );

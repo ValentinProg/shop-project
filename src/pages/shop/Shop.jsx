@@ -2,12 +2,20 @@ import React from "react";
 import "./Shop.css";
 import { useStore } from "../../store.js";
 import { useNavigate } from "react-router-dom";
+// import { toast } from 'react-toastify';
+import { showToast } from "../../helpers/showToast";
 
 const Shop = () => {
   const PRODUCTS = useStore((state) => state.PRODUCTS);
   const addToCart = useStore((state) => state.addToCart);
   const cartItems = useStore((state) => state.cartItems);
   const navigation = useNavigate();
+
+  const addCartItemToast = (id, name) => {
+    addToCart(id)
+    showToast('success',`${name} successfully added!`)
+    // toast.success(`${name} successfully added!`)
+  }
 
   return (
     <div className="shop">
@@ -26,7 +34,7 @@ const Shop = () => {
             </div>
             <button
               className="addToCartBttn"
-              onClick={() => addToCart(product.id)}
+              onClick={() => addCartItemToast(product?.id, product?.productName)}
             >
               Add to Cart
               {cartItems[product.id] > 0 && <>({cartItems[product.id]})</>}
