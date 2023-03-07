@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 // import { toast } from 'react-toastify';
 import { showToast } from "../../helpers/showToast";
 
-const Shop = () => {
+const Shop = (props) => {
   const PRODUCTS = useStore((state) => state.PRODUCTS);
   const addToCart = useStore((state) => state.addToCart);
   const cartItems = useStore((state) => state.cartItems);
@@ -17,13 +17,17 @@ const Shop = () => {
     // toast.success(`${name} successfully added!`)
   }
 
+  const productsFilter = PRODUCTS.filter(product => {
+    return product.productName.toLowerCase().includes(props.searchValue.toLocaleLowerCase())
+  })
+
   return (
     <div className="shop">
       <div className="shopTitle">
         <h1>Your Best Mobile Shop</h1>
       </div>
       <div className="products" >
-        {PRODUCTS.map((product) => (
+        {productsFilter.map((product) => (
           <div className="product" key={product.id}>
             <img src={product.productImage} onClick={() => navigation("/" + product.id)}/>
             <div className="description">

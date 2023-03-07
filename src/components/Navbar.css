@@ -33,6 +33,26 @@
   width: 3rem;
 }
 
+.navbarSearch {
+  padding: 1rem 2rem;
+}
+
+.navbarSearch input {
+  
+  border: 1px solid grey;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 1rem;
+  font-family: "Barlow", sans-serif;
+}
+
+/* .navbarSearch input:hover {
+  border: 2px solid rgb(19, 19, 19);
+  font-size: large;
+  width: 12rem;
+} */
+
+
+
 
 .links a {
   text-decoration: none;
@@ -60,6 +80,8 @@
   justify-content: center;
   border: 1px solid black;
 }
+
+
 
 
 @media only screen and (max-width: 375px) {

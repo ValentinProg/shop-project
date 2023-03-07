@@ -6,14 +6,17 @@ import Cart from "./pages/cart/Cart";
 import ShopItem from "./pages/shopItem/ShopItem";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { useState } from "react";
 
 function App() {
+  const [searchValue, setSearchValue] = useState('')
+
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Navbar setSearchValue={setSearchValue}/>
         <Routes>
-          <Route path="/" element={<Shop />} />
+          <Route path="/" element={<Shop searchValue={searchValue}/>} />
           <Route path="/cart" element={<Cart />} />
           <Route path="//:id" element={<ShopItem />} />
         </Routes>

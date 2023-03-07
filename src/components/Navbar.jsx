@@ -5,10 +5,11 @@ import "./Navbar.css";
 import { useStore } from "../store.js";
 import logo from "../assets/logo.png";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const getTotalAmount = useStore((state) => state.getTotalAmount);
   const cartItems = useStore((state) => state.cartItems);
   const totalAmount = useStore((state) => state.totalAmount);
+ 
 
   useEffect(() => {
     getTotalAmount();
@@ -20,6 +21,9 @@ const Navbar = () => {
         <span>YB</span>
         <img src={logo} />
         <span>MS</span>
+        <div className="navbarSearch">
+        <input type="text" placeholder="Search . . ." onChange={(e) => props.setSearchValue(e.target.value)}/>
+      </div>
       </Link>
       <div className="links">
         <Link to="/">Shop</Link>

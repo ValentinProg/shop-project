@@ -51,10 +51,7 @@
   background-color: transparent;
   border: 2px solid rgb(19, 19, 19);
   min-width: 100px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 1rem;
   font-family: "Barlow", sans-serif;
 }
