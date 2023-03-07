@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CartItem from "./CartItem";
 import "./Cart.css";
 import { useNavigate } from "react-router-dom";
 import { useStore } from "../../store.js";
-
+import Modal from "../../helpers/Modal";
 
 const Cart = () => {
   const cartItems = useStore((state) => state.cartItems);
@@ -12,7 +12,7 @@ const Cart = () => {
   const getTotalSum = useStore((state) => state.getTotalSum);
   const totalAmount = useStore((state) => state.totalAmount);
   const cartItemsSum = useStore((state) => state.cartItemsSum);
-  
+  // const modalState = useStore((state) => state.modalState);
 
   useEffect(() => {
     getTotalSum();
@@ -29,27 +29,37 @@ const Cart = () => {
   //   return totalAmount;
   // };
 
-  return (
-    <div className="cart">
-      {totalAmount > 0 && <h1>Your cart Items :</h1>}
+ 
 
-      <div className="cartItems">
-        {PRODUCTS.map((product) => {
-          if (cartItems[product.id] > 0) {
-            return <CartItem data={product} key={product.id} />;
-          }
-        })}
-      </div>
-      {totalAmount > 0 ? (
-        <div className="checkout">
-          <h1>Subtotal: ${cartItemsSum}</h1>
-          <button onClick={() => navigate("/")}>Continue Shopping</button>
-          <button>Checkout</button>
+  return (
+    <>
+      {/* {modalState && <Modal changeModalState={setModalState}/>} */}
+      <div className="cart">
+        {totalAmount > 0 && <h1>Your cart Items :</h1>}
+        <div className="cartItems">
+          {PRODUCTS.map((product) => {
+            if (cartItems[product.id] > 0) {
+              return (
+                <CartItem
+                  data={product}
+                  key={product.id}
+                
+                />
+              );
+            }
+          })}
         </div>
-      ) : (
-        <h1>Your Cart is Empty</h1>
-      )}
-    </div>
+        {totalAmount > 0 ? (
+          <div className="checkout">
+            <h1>Subtotal: ${cartItemsSum}</h1>
+            <button onClick={() => navigate("/")}>Continue Shopping</button>
+            <button>Checkout</button>
+          </div>
+        ) : (
+          <h1>Your Cart is Empty</h1>
+        )}
+      </div>
+    </>
   );
 };
 

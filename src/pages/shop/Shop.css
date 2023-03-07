@@ -21,13 +21,14 @@
 
 .product {
   border-radius: 15px;
-  width: 15rem;
+  /* width: 20rem; */
   height: 28rem;
   margin: 5rem; 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+  padding: 2rem 2.5rem; 
 }
 
 .product img {
