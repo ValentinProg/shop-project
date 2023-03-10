@@ -11,7 +11,7 @@ import product8 from "./assets/zte.webp";
 import product9 from "./assets/poco.webp";
 import product10 from "./assets/infinix.webp";
 
-export const useStore = create((set) => ({
+export const useStore = create(persist((set) => ({
   PRODUCTS: [
     {
       id: 1,
@@ -130,9 +130,6 @@ export const useStore = create((set) => ({
   totalAmount: 0,
   // modalState: false,
 
-
-
-
   addToCart: (itemId) =>
     set((state) => ({
       cartItems: { ...state.cartItems, [itemId]: state.cartItems[itemId] + 1 },
@@ -200,4 +197,9 @@ export const useStore = create((set) => ({
   // set(() => ({
   //   cartItems: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, },
   // })),
-}));
+
+}),
+{
+  storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
+},
+));
