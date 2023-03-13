@@ -128,8 +128,7 @@ export const useStore = create(persist((set) => ({
   cartItems: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0 },
   cartItemsSum: 0,
   totalAmount: 0,
-  // modalState: false,
-
+  
   addToCart: (itemId) =>
     set((state) => ({
       cartItems: { ...state.cartItems, [itemId]: state.cartItems[itemId] + 1 },
@@ -150,10 +149,6 @@ export const useStore = create(persist((set) => ({
       totalAmount: Object.values(state.cartItems).reduce((x, y) => x + y, 0),
     })),
 
-  // changeModalState: () =>
-  //   set((state) => ({
-  //     modalState: !state.modalState,
-  //   })),
 
   // getTotalSum: () => {
   //   let total = 0;
@@ -200,6 +195,6 @@ export const useStore = create(persist((set) => ({
 
 }),
 {
-  storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
+  storage: createJSONStorage(() => sessionStorage), 
 },
 ));

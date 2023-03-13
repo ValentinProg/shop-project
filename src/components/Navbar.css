@@ -7,11 +7,8 @@
   justify-content: space-around;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
-   /* overflow: hidden;  */
- position: fixed;
-  top: 0;    
-  /* z-index: 1; */
-  
+  position: fixed;
+  top: 0;
 }
 
 .links {
@@ -20,12 +17,12 @@
 }
 
 .navbarLogo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: black;
-    font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
 }
 
 .navbarLogo img {
@@ -38,18 +35,11 @@
 }
 
 .navbarSearch input {
-  
   border: 1px solid grey;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 1rem;
   font-family: "Barlow", sans-serif;
 }
-
-/* .navbarSearch input:hover {
-  border: 2px solid rgb(19, 19, 19);
-  font-size: large;
-  width: 12rem;
-} */
 
 .links a {
   text-decoration: none;
@@ -61,7 +51,6 @@
 .links a:hover {
   color: grey;
   opacity: 0.75;
-  /* text-decoration: underline blue 3px; */
   transition: opacity 0.2s ease, color 0.2s ease;
 }
 
@@ -78,10 +67,7 @@
   border: 1px solid black;
 }
 
-
-
-
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 430px) {
   .navbarLogo {
     font-size: 1.2rem;
   }
@@ -93,12 +79,21 @@
 
   .links a {
     font-size: 1.2rem;
-    margin-left: 0.5rem;
+    margin-left: 0rem;
   }
 
   .totalAmount {
     font-size: 0.8rem;
     height: 1.5rem;
     width: 1.5rem;
+  }
+
+  .navbarSearch {
+    padding: 1rem 0.2rem;
+    margin-left: 0.3rem;
+  }
+
+  .navbarSearch input {
+    width: 3.5rem;
   }
 }

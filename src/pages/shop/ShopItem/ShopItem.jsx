@@ -1,5 +1,5 @@
 import React from "react";
-import { useStore } from "../../store.js";
+import { useStore } from "../../../store.js";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./ShopItem.css";
@@ -19,7 +19,6 @@ const ShopItem = () => {
       <div className="ShopItemInfo">
         <img src={product.productImage} />
         <div className="ShopItemTehInfo">
-      
           <p> Price: ${product.price}</p>
           <p> Color: {product.color}</p>
           <p> Brand: {product.productName.toUpperCase()} </p>

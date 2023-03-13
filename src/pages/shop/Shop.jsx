@@ -2,7 +2,6 @@ import React from "react";
 import "./Shop.css";
 import { useStore } from "../../store.js";
 import { useNavigate } from "react-router-dom";
-// import { toast } from 'react-toastify';
 import { showToast } from "../../helpers/showToast";
 
 const Shop = (props) => {
@@ -14,7 +13,6 @@ const Shop = (props) => {
   const addCartItemToast = (id, name) => {
     addToCart(id)
     showToast('success',`${name} successfully added!`)
-    // toast.success(`${name} successfully added!`)
   }
 
   const productsFilter = PRODUCTS.filter(product => {

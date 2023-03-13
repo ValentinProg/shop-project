@@ -1,0 +1,35 @@
+.cartItem {
+  width: 42rem;
+  height: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 1.5rem;
+  margin: 2rem;
+}
+.cartItem h1 {
+  font-size: 2rem;
+}
+
+.cartItem img {
+  width: 10rem;
+  margin: 2rem;
+}
+
+.cartItem .description {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.countHandler input {
+  width: 3rem;
+  text-align: center;
+}
+
+.cleanCartItemLogo:hover {
+  cursor: pointer;
+}
