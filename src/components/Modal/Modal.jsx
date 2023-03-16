@@ -1,8 +1,8 @@
 import React from "react";
-import { showToast } from "../helpers/showToast";
-import { useStore } from "../store";
+import { showToast } from "../../helpers/showToast";
+import { useStore } from "../../store";
 import "./Modal.css";
-import { XCircle } from "phosphor-react";
+import xCircle from "../../assets/xcircle.svg";
 
 const Modal = (props) => {
   const deleteCartItem = useStore((state) => state.deleteCartItem);
@@ -24,11 +24,9 @@ const Modal = (props) => {
         }}
       >
         <div className="modalContainerCancel">
-          <XCircle
-            size={32}
-            weight="light"
-            onClick={() => props.setModalIsOpen(false)}
-          />
+          <button onClick={() => props.setModalIsOpen(false)}>
+            <img src={xCircle} alt="xcircle" />
+          </button>
         </div>
         <div className="titleModal">
           <h1>Confirmation</h1>

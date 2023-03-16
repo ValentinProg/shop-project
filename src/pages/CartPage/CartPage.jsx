@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
-import CartItem from "./CartItem/CartItem";
-import "./Cart.css";
-import { useNavigate } from "react-router-dom";
+import CartItem from "../../components/CartItem/CartItem";
+import "./CartPage.css";
+import { Link } from "react-router-dom";
 import { useStore } from "../../store.js";
 
 const Cart = () => {
   const cartItems = useStore((state) => state.cartItems);
   const PRODUCTS = useStore((state) => state.PRODUCTS);
-  const navigate = useNavigate();
   const getTotalSum = useStore((state) => state.getTotalSum);
   const totalAmount = useStore((state) => state.totalAmount);
   const cartItemsSum = useStore((state) => state.cartItemsSum);
@@ -29,20 +28,22 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      {totalAmount > 0 && <h1>Your cart Items :</h1>}
-      <div className="cartItems">
-        {PRODUCTS.map((product) => {
-          if (cartItems[product.id] > 0) {
-            return <CartItem data={product} key={product.id} />;
-          }
-        })}
-      </div>
       {totalAmount > 0 ? (
-        <div className="checkout">
-          <h1>Subtotal: ${cartItemsSum}</h1>
-          <button onClick={() => navigate("/")}>Continue Shopping</button>
-          <button>Checkout</button>
-        </div>
+        <>
+          <h1>Your cart Items</h1>
+          {PRODUCTS.map((product) => {
+            if (cartItems[product.id] > 0) {
+              return <CartItem data={product} key={product.id} />;
+            }
+          })}
+          <div className="checkout">
+            <h1>Subtotal: ${cartItemsSum}</h1>
+            <Link to="/">
+              <button>Continue Shopping</button>
+            </Link>
+            <button>Checkout</button>
+          </div>
+        </>
       ) : (
         <h1>Your Cart is Empty</h1>
       )}

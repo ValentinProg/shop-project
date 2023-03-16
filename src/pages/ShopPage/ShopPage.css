@@ -40,6 +40,10 @@
   text-align: center;
 }
 
+.descriptionName {
+  font-weight: bold;
+}
+
 .product:hover {
   cursor: pointer;
   align-items: center;

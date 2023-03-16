@@ -1,14 +1,15 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Shop from "./pages/shop/Shop";
-import Cart from "./pages/cart/Cart";
-import ShopItem from "./pages/shop/ShopItem/ShopItem";
+import Navbar from "./components/Navbar/Navbar";
+import ShopPage from "./pages/ShopPage/ShopPage";
+import CartPage from "./pages/CartPage/CartPage";
+import ShopItem from "./components/ShopItem/ShopItem";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { useState } from "react";
 
 function App() {
+  // move to zustand
   const [searchValue, setSearchValue] = useState("");
 
   return (
@@ -16,8 +17,8 @@ function App() {
       <Router>
         <Navbar setSearchValue={setSearchValue} />
         <Routes>
-          <Route path="/" element={<Shop searchValue={searchValue} />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/" element={<ShopPage searchValue={searchValue} />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="//:id" element={<ShopItem />} />
         </Routes>
       </Router>

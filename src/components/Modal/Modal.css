@@ -48,6 +48,15 @@
   margin: 1rem 1rem 0 0;
 }
 
+.modalContainerCancel button{
+  border: none;
+  background-color: white;
+}
+
+.modalContainerCancel img{
+  height: 2rem;
+}
+
 .modalContainerCancel :hover{
   cursor: pointer;
 }

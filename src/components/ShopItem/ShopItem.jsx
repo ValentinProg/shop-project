@@ -1,5 +1,4 @@
-import React from "react";
-import { useStore } from "../../../store.js";
+import { useStore } from "../../store";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./ShopItem.css";
