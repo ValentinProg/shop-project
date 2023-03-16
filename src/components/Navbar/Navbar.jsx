@@ -5,10 +5,12 @@ import { useStore } from "../../store";
 import logo from "../../assets/logo.svg";
 import svgCart from "../../assets/shoppingCart.svg";
 
-const Navbar = (props) => {
+const Navbar = () => {
   const getTotalAmount = useStore((state) => state.getTotalAmount);
   const cartItems = useStore((state) => state.cartItems);
   const totalAmount = useStore((state) => state.totalAmount);
+
+  const changeSearchValue = useStore((state) => state.changeSearchValue);
 
   useEffect(() => {
     getTotalAmount();
@@ -26,8 +28,8 @@ const Navbar = (props) => {
             type="text"
             maxlength="10"
             placeholder="Search . . ."
-            onChange={(e) => props.setSearchValue(e.target.value)}
-            // onChange={(e) => props.setSearchValue(e.target.value.replace(/[0-9]/g,''))}
+            onChange={(e) => changeSearchValue(e.target.value)}
+            // onChange={(e) => props.setSearchValue((e.target.value).replace(/[0-9]/g,''))}
           />
         </div>
       </Link>

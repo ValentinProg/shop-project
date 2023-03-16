@@ -4,10 +4,11 @@ import { useStore } from "../../store.js";
 import { showToast } from "../../helpers/showToast";
 import { Link } from "react-router-dom";
 
-const Shop = (props) => {
+const Shop = () => {
   const PRODUCTS = useStore((state) => state.PRODUCTS);
   const addToCart = useStore((state) => state.addToCart);
   const cartItems = useStore((state) => state.cartItems);
+  const searchValue = useStore((state) => state.searchValue);
 
   const addCartItemToast = (id, name) => {
     addToCart(id);
@@ -17,7 +18,7 @@ const Shop = (props) => {
   const productsFilter = PRODUCTS.filter((product) => {
     return product.productName
       .toLowerCase()
-      .includes(props.searchValue.toLocaleLowerCase());
+      .includes(searchValue.toLocaleLowerCase());
   });
 
   return (

@@ -128,6 +128,12 @@ export const useStore = create(persist((set) => ({
   cartItems: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0 },
   cartItemsSum: 0,
   totalAmount: 0,
+  searchValue: '',
+
+  changeSearchValue:(value) =>
+  set(() => ({
+    searchValue: value,
+  })),
   
   addToCart: (itemId) =>
     set((state) => ({

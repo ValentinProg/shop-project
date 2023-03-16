@@ -27,9 +27,9 @@
 }
 
 .navbarLogo img {
-  height: auto;
-  width: 3rem;
+  height: 3rem;
 }
+
 
 .navbarSearch {
   padding: 1rem 2rem;
@@ -55,11 +55,12 @@
   
 }
 
-.links img ,a:hover {
+/* .links img,a:hover {
   color: grey;
   opacity: 0.75;
   transition: opacity 0.2s ease, color 0.2s ease;
-}
+} */
+
 
 .totalAmount {
   color: black;
