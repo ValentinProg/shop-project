@@ -1,7 +1,8 @@
 import { useStore } from "../../store";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "./ShopItem.css";
+import styles from "./ShopItem.module.scss";
+import Button from "../Button/Button";
 
 const ShopItem = () => {
   const { id } = useParams();
@@ -10,14 +11,14 @@ const ShopItem = () => {
   const product = PRODUCTS[id - 1];
 
   return (
-    <div className="ShopItem">
-      <p className="ShopItemTitle">
+    <div className={styles.ShopItem}>
+      <p className={styles.ShopItemTitle}>
         Mobile phone: {product.productName.toUpperCase()}/{product.model}/
         {product.color}
       </p>
-      <div className="ShopItemInfo">
+      <div className={styles.ShopItemInfo}>
         <img src={product.productImage} />
-        <div className="ShopItemTehInfo">
+        <div className={styles.ShopItemTehInfo}>
           <p> Price: ${product.price}</p>
           <p> Color: {product.color}</p>
           <p> Brand: {product.productName.toUpperCase()} </p>
@@ -26,12 +27,12 @@ const ShopItem = () => {
           <p> Camera: {product.camera} </p>
           <p> Memory: {product.memory} Gb </p>
           <Link to="/cart">
-            <button
-              className="addToCartBttn"
+            <Button
+              // className={styles.addToCartBttn}
               onClick={() => addToCart(product.id)}
             >
               Buy
-            </button>
+            </Button>
           </Link>
         </div>
       </div>

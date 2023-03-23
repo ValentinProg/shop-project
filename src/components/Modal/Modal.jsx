@@ -1,8 +1,9 @@
 import React from "react";
 import { showToast } from "../../helpers/showToast";
 import { useStore } from "../../store";
-import "./Modal.css";
+import styles from "./Modal.module.scss";
 import xCircle from "../../assets/xcircle.svg";
+import Button from "../Button/Button";
 
 const Modal = (props) => {
   const deleteCartItem = useStore((state) => state.deleteCartItem);
@@ -14,31 +15,31 @@ const Modal = (props) => {
 
   return (
     <div
-      className="modalBackground"
+      className={styles.modalBackground}
       onClick={() => props.setModalIsOpen(false)}
     >
       <div
-        className="modalContainer"
+        className={styles.modalContainer}
         onClick={(e) => {
           e.stopPropagation();
         }}
       >
-        <div className="modalContainerCancel">
+        <div className={styles.modalContainerCancel}>
           <button onClick={() => props.setModalIsOpen(false)}>
             <img src={xCircle} alt="xcircle" />
           </button>
         </div>
-        <div className="titleModal">
+        <div className={styles.titleModal}>
           <h1>Confirmation</h1>
         </div>
-        <div className="bodyModal">
+        <div className={styles.bodyModal}>
           <p>Confirm product deletion from the basket</p>
         </div>
-        <div className="footerModal">
-          <button onClick={() => deleteCartItemToast(props.id, props.name)}>
+        <div className={styles.footerModal}>
+          <Button onClick={() => deleteCartItemToast(props.id, props.name)}>
             Continue
-          </button>
-          <button onClick={() => props.setModalIsOpen(false)}>Cancel</button>
+          </Button>
+          <Button onClick={() => props.setModalIsOpen(false)}>Cancel</Button>
         </div>
       </div>
     </div>

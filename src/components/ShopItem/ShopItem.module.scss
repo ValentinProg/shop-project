@@ -1,5 +1,11 @@
 .ShopItem {
   margin: 8rem 1rem 1rem 1rem;
+
+  img {
+    height: 32rem;
+    width: auto;
+    margin: 3rem;
+  }
 }
 
 .ShopItemTitle {
@@ -10,30 +16,20 @@
 .ShopItemInfo {
   display: flex;
   align-items: center;
-  /* justify-content: space-evenly; */
   justify-content: center;
   margin-top: 2rem;
-}
-
-.ShopItem img {
-  height: 32rem;
-  width: auto;
-  margin: 3rem;
 }
 
 .ShopItemTehInfo {
   font-size: 1.5rem;
   margin-left: 6rem;
+
+  button {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    width: 8rem;
+  }
 }
-
-.ShopItemTehInfo button {
-  font-size: 1.5rem;
-  margin-top: 2rem;
-}
-
-
-
-  
 
 @media only screen and (max-width: 768px) {
   .ShopItemTitle {
@@ -42,10 +38,11 @@
 
   .ShopItemTehInfo {
     margin-left: 0.2rem;
-  } 
-  .ShopItemTehInfo p {
-    margin: 0.4rem;
-  } 
+
+    p {
+      margin: 0.4rem;
+    }
+  }
 
   .ShopItem img {
     height: 24rem;
@@ -54,32 +51,34 @@
 }
 
 @media only screen and (max-width: 550px) {
-
   .ShopItemInfo {
     flex-direction: column;
-  } 
+  }
 
   .ShopItemTehInfo {
     font-size: 0.8rem;
     margin-left: 0rem;
     display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-  } 
-  .ShopItemTehInfo p {
-    margin: 0.1rem;
-  } 
+    p {
+      margin: 0.1rem;
+    }
+
+    button {
+      font-size: 1rem;
+      margin: 1rem;
+      
+    }
+  }
+
   .ShopItem img {
     height: 18rem;
     width: auto;
     margin: 0.5rem;
   }
 
-  .ShopItemTehInfo button {
-    font-size: 1rem;
-    margin: 1rem;
-  }
-}
 
+}

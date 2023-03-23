@@ -1,0 +1,11 @@
+.countHandler input {
+    width: 3rem;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 450px) {
+    .countHandler input {
+      width: 2rem;
+      height: auto;
+    }
+  }

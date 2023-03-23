@@ -2,7 +2,7 @@ import React from "react";
 import trash from "../../assets/trash.svg";
 import { useState } from "react";
 import Modal from "../../components/Modal/Modal";
-import "./CartItem.css";
+import styles from './CartItem.module.scss'
 import CountHandler from "../CountHandler/CountHandler";
 
 const CartItem = (props) => {
@@ -17,15 +17,15 @@ const CartItem = (props) => {
           setModalIsOpen={setModalIsOpen}
         />
       )}
-      <div className="cartItem">
+      <div className={styles.cartItem}>
         <img src={props.data.productImage} />
-        <div className="description">
+        <div className={styles.description}>
           <h1>{props.data.productName.toUpperCase()}</h1>
           <p>${props.data.price}</p>
           <CountHandler id={props.data.id} />
         </div>
         <button
-          className="cleanCartItemLogo"
+          className={styles.cleanCartItemLogo}
           onClick={() => setModalIsOpen(true)}
         >
           <img src={trash} alt="trash" />

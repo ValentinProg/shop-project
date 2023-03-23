@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import styles from "./Navbar.module.scss";
 import { useStore } from "../../store";
 import logo from "../../assets/logo.svg";
 import svgCart from "../../assets/shoppingCart.svg";
@@ -9,36 +9,43 @@ const Navbar = () => {
   const getTotalAmount = useStore((state) => state.getTotalAmount);
   const cartItems = useStore((state) => state.cartItems);
   const totalAmount = useStore((state) => state.totalAmount);
-
   const changeSearchValue = useStore((state) => state.changeSearchValue);
+  const searchValue = useStore((state) => state.searchValue);
 
   useEffect(() => {
     getTotalAmount();
   }, [cartItems]);
 
-
+  const inputValidation = (string) => {
+    // const reg = /^[0-9!@#\$%\^\&*\)\(+=._-]+$/g
+    const reg =/[^a-zA]/g
+    
+    return string.replace(reg, '')
+  }
+  
   return (
-    <div className="navbar">
-      <Link to="/" className="navbarLogo">
+    <div className={styles.navbar}>
+      <Link to="/" className={styles.navbarLogo}>
         <span>YB</span>
         <img src={logo} alt="logo" />
         <span>MS</span>
-        <div className="navbarSearch">
+        <div className={styles.navbarSearch}>
           <input
+            value={searchValue}
             type="text"
-            maxlength="10"
+            maxLength="30"
             placeholder="Search . . ."
-            onChange={(e) => changeSearchValue(e.target.value)}
+            onChange={(e) => changeSearchValue(inputValidation(e.target.value))}
             // onChange={(e) => props.setSearchValue((e.target.value).replace(/[0-9]/g,''))}
           />
         </div>
       </Link>
-      <div className="links">
+      <div className={styles.links}>
         <Link to="/">Shop</Link>
         <Link to="/cart">
           <img src={svgCart} alt="cart"/>
         </Link>
-        <p className="totalAmount">{totalAmount}</p>
+        <p className={styles.totalAmount}>{totalAmount}</p>
       </div>
     </div>
   );

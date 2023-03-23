@@ -1,8 +1,9 @@
 import React from "react";
-import "./ShopPage.css";
+import styles from "./ShopPage.module.scss";
 import { useStore } from "../../store.js";
 import { showToast } from "../../helpers/showToast";
 import { Link } from "react-router-dom";
+import Button from "../../components/Button/Button";
 
 const Shop = () => {
   const PRODUCTS = useStore((state) => state.PRODUCTS);
@@ -22,29 +23,28 @@ const Shop = () => {
   });
 
   return (
-    <div className="shop">
-      <div className="shopTitle">
+    <div className={styles.shop}>
+      <div className={styles.shopTitle}>
         <h1>Your Best Mobile Shop</h1>
       </div>
-      <div className="products">
+      <div className={styles.products}>
         {productsFilter.map((product) => (
-          <div className="product" key={product.id}>
+          <div className={styles.product} key={product.id}>
             <Link to={"/" + product.id}>
               <img src={product.productImage} />
             </Link>
-            <div className="description">
-              <p className="descriptionName">{product.productName}</p>
+            <div className={styles.description}>
+              <p className={styles.descriptionName}>{product.productName}</p>
               <p>${product.price}</p>
             </div>
-            <button
-              className="addToCartBttn"
+            <Button
               onClick={() =>
                 addCartItemToast(product?.id, product?.productName)
               }
             >
-              Add to Cart
+             <span>Add to Cart</span>
               {cartItems[product.id] > 0 && <>({cartItems[product.id]})</>}
-            </button>
+            </Button>
           </div>
         ))}
       </div>

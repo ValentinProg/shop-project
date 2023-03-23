@@ -130,6 +130,7 @@ export const useStore = create(persist((set) => ({
   totalAmount: 0,
   searchValue: '',
 
+  
   changeSearchValue:(value) =>
   set(() => ({
     searchValue: value,

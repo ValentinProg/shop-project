@@ -1,0 +1,45 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7rem;
+}
+
+.checkout {
+  .checkout a {
+    margin: 1rem;
+  }
+  h1 {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+// .checkout button {
+//   width: 9rem;
+//   height: 3rem;
+//   background-color: rgb(19, 19, 19);
+//   color: white;
+//   border: none;
+//   border-radius: 0.5rem;
+//   margin: 1rem;
+//   cursor: pointer;
+//   font-family: "Barlow", sans-serif;
+// }
+
+@media only screen and (max-width: 450px) {
+  .checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cart h1 {
+    font-size: 1.4rem;
+  }
+}

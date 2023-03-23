@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import CartItem from "../../components/CartItem/CartItem";
-import "./CartPage.css";
+import styles from "./CartPage.module.scss";
 import { Link } from "react-router-dom";
 import { useStore } from "../../store.js";
+import Button from "../../components/Button/Button";
 
 const Cart = () => {
   const cartItems = useStore((state) => state.cartItems);
@@ -27,7 +28,7 @@ const Cart = () => {
   // };
 
   return (
-    <div className="cart">
+    <div className={styles.cart}>
       {totalAmount > 0 ? (
         <>
           <h1>Your cart Items</h1>
@@ -36,12 +37,12 @@ const Cart = () => {
               return <CartItem data={product} key={product.id} />;
             }
           })}
-          <div className="checkout">
+          <div className={styles.checkout}>
             <h1>Subtotal: ${cartItemsSum}</h1>
             <Link to="/">
-              <button>Continue Shopping</button>
+              <Button>Continue Shopping</Button>
             </Link>
-            <button>Checkout</button>
+            <Button>Checkout</Button>
           </div>
         </>
       ) : (

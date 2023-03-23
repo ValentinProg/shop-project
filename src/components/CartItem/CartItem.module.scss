@@ -39,3 +39,25 @@
 .cleanCartItemLogo:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 730px) {
+  .cartItem {
+    width: 26rem;
+    height: 16rem;
+    margin: 2rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .cartItem {
+    width: 18rem;
+    height: 12rem;
+    margin: 1rem;
+    padding: 0.8rem;
+
+    img {
+      width: 3rem;
+      margin: 1rem;
+    }
+  }
+}
