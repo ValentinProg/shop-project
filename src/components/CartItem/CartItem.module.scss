@@ -7,14 +7,17 @@
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   border-radius: 1.5rem;
   margin: 2rem;
-}
-.cartItem h1 {
-  font-size: 2rem;
-}
+  background-color: var(--bg-card-color);
 
-.cartItem img {
-  width: 10rem;
-  margin: 2rem;
+  h1 {
+    font-size: 2rem;
+  }
+
+  img {
+    width: 10rem;
+    margin: 2rem;
+    border-radius: 1rem;
+  }
 }
 
 .cartItem .description {
@@ -23,17 +26,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--text-color);
 }
 
 .cleanCartItemLogo {
   border: none;
-  background-color: white;
-}
+  background-color: var(--bg-card-color);
 
-.cleanCartItemLogo img {
-  height: 2rem;
-  width: 2rem;
-  margin: 0px;
+  img {
+    height: 2rem;
+    width: 2rem;
+    margin: 0px;
+  }
 }
 
 .cleanCartItemLogo:hover {

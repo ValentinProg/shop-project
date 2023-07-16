@@ -14,7 +14,7 @@
   width: 35rem;
   height: 20rem;
   border-radius: 12px;
-  background-color: white;
+  background-color: var(--bg-color);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
@@ -48,16 +48,16 @@
   margin: 1rem 1rem 0 0;
 }
 
-.modalContainerCancel button{
+.modalContainerCancel button {
   border: none;
-  background-color: white;
+  background-color: var(--bg-color);
 }
 
-.modalContainerCancel img{
+.modalContainerCancel img {
   height: 2rem;
 }
 
-.modalContainerCancel :hover{
+.modalContainerCancel :hover {
   cursor: pointer;
 }
 

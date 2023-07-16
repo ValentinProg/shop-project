@@ -8,7 +8,7 @@ const ShopItem = () => {
   const { id } = useParams();
   const PRODUCTS = useStore((state) => state.PRODUCTS);
   const addToCart = useStore((state) => state.addToCart);
-  const product = PRODUCTS[id - 1];
+  const product = PRODUCTS[id];
 
   return (
     <div className={styles.ShopItem}>
@@ -17,7 +17,7 @@ const ShopItem = () => {
         {product.color}
       </p>
       <div className={styles.ShopItemInfo}>
-        <img src={product.productImage} />
+        <img src={product.productImage} alt={product.productName} />
         <div className={styles.ShopItemTehInfo}>
           <p> Price: ${product.price}</p>
           <p> Color: {product.color}</p>

@@ -1,14 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,500;1,400&display=swap');
 
 .App {
-  width: 100vw;
-  height: 100vh;
   font-family: 'Barlow', sans-serif;
+ background-color:  var(--bg-color);
+   min-height: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
 }
+
+
+
+.dark {
+  --bg-color: #18181b;
+  --bg-card-color: #363e48;
+  --text-color: rgba(255, 255, 255, 0.766);
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+.light {
+  --bg-color: white;
+  --bg-card-color: white;
+  --text-color: black;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
 
 body {
   padding: 0;
   position: relative;
+  background-color: var(--bg-color);
 }
 
 body,
@@ -16,3 +36,6 @@ h1 {
   margin: 0;
 }
 
+.content {
+  padding: 30px;
+}

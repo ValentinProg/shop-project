@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import CartItem from "../../components/CartItem/CartItem";
 import styles from "./CartPage.module.scss";
 import { Link } from "react-router-dom";
-import { useStore } from "../../store.js";
+import { useStore } from "../../store";
 import Button from "../../components/Button/Button";
 
 const Cart = () => {
@@ -14,18 +14,7 @@ const Cart = () => {
 
   useEffect(() => {
     getTotalSum();
-  }, [totalAmount]);
-
-  // const getTotalCartAmount = () => {
-  //   let totalAmount = 0;
-  //   for (const item in cartItems) {
-  //     if (cartItems[item] > 0) {
-  //       let itemInfo = PRODUCTS.find((product) => product.id === Number(item));
-  //       totalAmount += cartItems[item] * itemInfo.price;
-  //     }
-  //   }
-  //   return totalAmount;
-  // };
+  }, [totalAmount, getTotalSum]);
 
   return (
     <div className={styles.cart}>

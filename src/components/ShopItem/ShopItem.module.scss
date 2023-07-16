@@ -1,10 +1,12 @@
 .ShopItem {
   margin: 8rem 1rem 1rem 1rem;
+  color: var(--text-color);
 
   img {
     height: 32rem;
     width: auto;
     margin: 3rem;
+    border-radius: 30px;
   }
 }
 
@@ -70,7 +72,6 @@
     button {
       font-size: 1rem;
       margin: 1rem;
-      
     }
   }
 
@@ -79,6 +80,4 @@
     width: auto;
     margin: 0.5rem;
   }
-
-
 }

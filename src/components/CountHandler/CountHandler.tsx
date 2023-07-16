@@ -1,8 +1,8 @@
 import styles from "./CountHandler.module.scss";
 import { useStore } from "../../store";
+import Button from "../Button/Button";
 
-
-const CountHandler = (props) => {
+const CountHandler = ({ id }: { id: number }) => {
   const cartItems = useStore((state) => state.cartItems);
   const addToCart = useStore((state) => state.addToCart);
   const removeFromCart = useStore((state) => state.removeFromCart);
@@ -10,13 +10,13 @@ const CountHandler = (props) => {
 
   return (
     <div className={styles.countHandler}>
-      <button onClick={() => removeFromCart(props.id)}> - </button>
+      <Button onClick={() => removeFromCart(id)}> - </Button>
       <input
         type="text"
-        value={cartItems[props.id]}
-        onChange={(e) => updateCartItemCount(Number(e.target.value), props.id)}
+        value={cartItems[id]}
+        onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
       />
-      <button onClick={() => addToCart(props.id)}> + </button>
+      <Button onClick={() => addToCart(id)}> + </Button>
     </div>
   );
 };

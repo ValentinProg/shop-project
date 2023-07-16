@@ -1,6 +1,5 @@
-import React from "react";
 import styles from "./ShopPage.module.scss";
-import { useStore } from "../../store.js";
+import { useStore } from "../../store";
 import { showToast } from "../../helpers/showToast";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
@@ -11,7 +10,7 @@ const Shop = () => {
   const cartItems = useStore((state) => state.cartItems);
   const searchValue = useStore((state) => state.searchValue);
 
-  const addCartItemToast = (id, name) => {
+  const addCartItemToast = (id: number, name: string) => {
     addToCart(id);
     showToast("success", `${name} successfully added!`);
   };
@@ -42,7 +41,7 @@ const Shop = () => {
                 addCartItemToast(product?.id, product?.productName)
               }
             >
-             <span>Add to Cart</span>
+              <span>Add to Cart</span>
               {cartItems[product.id] > 0 && <>({cartItems[product.id]})</>}
             </Button>
           </div>
